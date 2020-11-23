@@ -2,6 +2,7 @@
 using System;
 using FizzBuzzApp;
 using System.IO;
+using System.Reflection;
 
 namespace FizzBuzzTest
 {
@@ -50,14 +51,11 @@ namespace FizzBuzzTest
         [TestMethod]
         public void Test_Run ()
         {
-            var fizzbuzz = new FizzBuzz();
-            string correctOutput 
-                = "1" + Environment.NewLine 
-                + "2" + Environment.NewLine 
-                + "Fizz" + Environment.NewLine 
-                + "4" + Environment.NewLine 
-                + "Buzz" + Environment.NewLine;
-            var fizbuzzNumber = 5;
+            FizzBuzz fizzbuzz = new FizzBuzz();
+            var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var path = string.Format("{0}\\{1}", directory, "correctFizzBuzzOutput_44.txt");
+            var correctOutput = File.ReadAllText(path);
+            var fizbuzzNumber = 44;
             using (var stringwriter = new StringWriter())
             {
                 Console.SetOut(stringwriter);

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FizzBuzzApp
 {
@@ -12,10 +10,7 @@ namespace FizzBuzzApp
 
             for (int i = 1; i <= fizzBuzzNumber; i++)
             {
-                if(UniversalAnswer(i))
-                {
-                    result = "Answer to the Ultimate Question of Life, the Universe, andEverything";
-                }
+
                 if(Fizz(i))
                 {
                     result = "Fizz";
@@ -24,7 +19,11 @@ namespace FizzBuzzApp
                 {
                     result += "Buzz";
                 }
-                if(string.IsNullOrEmpty(result))
+                if (UniversalAnswer(i))
+                {
+                    result = "Answer to the Ultimate Question of Life, the Universe, andEverything";
+                }
+                if (string.IsNullOrEmpty(result))
                 {
                     result = i.ToString();
                 }
@@ -32,9 +31,9 @@ namespace FizzBuzzApp
                 result = "";
             }
         }
-        public bool Fizz(int i) => i % 3 == 0 ? true : false;
-        public bool Buzz(int i) => i % 5 == 0 ? true : false;
-        public bool UniversalAnswer(int i) => i == 42 ? true : false;
+        public bool Fizz(int i) => i % 3 == 0;
+        public bool Buzz(int i) => i % 5 == 0;
+        public bool UniversalAnswer(int i) => i == 42;
     }
 
 }
