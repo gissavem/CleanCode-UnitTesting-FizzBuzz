@@ -6,7 +6,7 @@ using System.IO;
 namespace FizzBuzzTest
 {
     [TestClass]
-    public class FizzBuzzTest
+    public class FizzBuzzTests
     {
         [TestMethod]
         public void Should_Return_Fizz()
@@ -18,8 +18,8 @@ namespace FizzBuzzTest
             bool validResult = fizzBuzz.Fizz(validInt);
             bool invalidResult = fizzBuzz.Fizz(invalidInt);
 
-            Assert.AreEqual<bool>(true, validResult);
-            Assert.AreEqual<bool>(false, invalidResult);
+            Assert.AreEqual(true, validResult);
+            Assert.AreEqual(false, invalidResult);
         }
         [TestMethod]
         public void Should_Return_Buzz()
@@ -31,8 +31,8 @@ namespace FizzBuzzTest
             bool validResult = fizzBuzz.Buzz(validInt);
             bool invalidResult = fizzBuzz.Buzz(invalidInt);
 
-            Assert.AreEqual<bool>(true, validResult);
-            Assert.AreEqual<bool>(false, invalidResult);
+            Assert.AreEqual(true, validResult);
+            Assert.AreEqual(false, invalidResult);
         }
         [TestMethod]
         public void Should_Return_Universal_Answer()
@@ -44,8 +44,8 @@ namespace FizzBuzzTest
             bool validResult = fizzBuzz.UniversalAnswer(validInt);
             bool invalidResult = fizzBuzz.UniversalAnswer(invalidInt);
 
-            Assert.AreEqual<bool>(true, validResult);
-            Assert.AreEqual<bool>(false, invalidResult);
+            Assert.AreEqual(true, validResult);
+            Assert.AreEqual(false, invalidResult);
         }
         [TestMethod]
         public void Test_Run ()

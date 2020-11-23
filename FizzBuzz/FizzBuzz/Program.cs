@@ -7,7 +7,13 @@ namespace FizzBuzzApp
         static void Main(string[] args)
         {
             var fizzBuzz = new FizzBuzz();
-            fizzBuzz.Run();
+            var validator = new InputValidator();
+            string input;
+            do { input = Console.ReadLine(); } while (validator.ValidateUserInput(input));
+
+            fizzBuzz.Run(int.Parse(input));
         }
+
+
     }
 }
